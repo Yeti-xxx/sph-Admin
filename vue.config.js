@@ -36,13 +36,15 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    // proxy代理
+    //配置代理跨域
     proxy: {
-      'api': {
+      '/dev-api': {
         target: 'http://gmall-h5-api.atguigu.cn',
-        pathRewrite: { '^/dev-api': '' }
-      }
-    }
+        pathRewrite: { '^/dev-api': '' },
+      },
+    },
+    //开启mock数据
+    // before: require('./mock/mock-server.js')
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
